@@ -1,0 +1,54 @@
+
+  .sec-animate {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .a-element {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .text-section {
+    padding: 0 60px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+
+  .a-txt {
+    font-family: Quicksand, sans-serif;
+    position: absolute;
+    margin: 0 40px;
+  }
+
+  .a-txt h3 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 2.4rem;
+  }
+
+  .a-txt p {
+    font-size: 20px;
+    line-height: 1.75rem;
+  }
+
+  .blank {
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
