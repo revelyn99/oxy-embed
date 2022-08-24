@@ -864,3 +864,63 @@
       </div>
     </div>
   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.defaults({
+  markers: true,
+});
+
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".sec-animate",
+    pin: true, // pin the trigger element while active
+    start: "top top", // when the top of the trigger hits the top of the viewport
+    end: "+=600%", // end after scrolling 500px beyond the start
+    scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    snap: {
+      snapTo: "labels", // snap to the closest label in the timeline
+      duration: { min: 0.2, max: 1 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+      delay: 0, // wait 0.2 seconds from the last scroll event before doing the snapping
+      ease: "power1.in", // the ease of the snap animation ("power3" by default)
+    },
+  },
+});
+
+// add animations and labels to the timeline
+tl.addLabel("stop0")
+
+  .addLabel("stop1")
+  .to("#g1, #g3, #g4, #g5", { alpha: 0.2 }, "stop1")
+  .to("#g5", { alpha: 0 }, "stop1")
+  .to("#g2", { alpha: 1 }, "stop1")
+  .to(".txt", { alpha: 0 }, "stop1")
+  .from("#txt-2", { alpha: 0, x: 15 }, "stop1+=.3")
+
+  .addLabel("stop2")
+  .to("#g2", { alpha: 0.2 }, "stop2")
+  .to("#g1", { alpha: 1 }, "stop2")
+  .to(".txt", { alpha: 0 }, "stop2")
+  .from("#txt-3", { alpha: 0, x: 15 }, "stop2+=.3")
+
+  .addLabel("stop3")
+  .to("#g1", { alpha: 0.2 }, "stop3")
+  .to("#g3", { alpha: 1 }, "stop3")
+  .to(".txt", { alpha: 0 }, "stop3")
+  .from("#txt-4", { alpha: 0, x: 15 }, "stop3+=.3")
+
+  .addLabel("stop4")
+  .to("#g3", { alpha: 0.2 }, "stop4")
+  .to("#g4", { alpha: 1 }, "stop4")
+  .to("#g5", { alpha: 1 }, "stop4")
+  .to(".txt", { alpha: 0 }, "stop4")
+  .from("#txt-5", { alpha: 0, x: 15 }, "stop4+=.3")
+
+  .addLabel("stop5")
+  .to(".group", { alpha: 1 }, "stop5")
+  .to(".txt", { alpha: 0 }, "stop5")
+  .from("#txt-6", { alpha: 0, x: 15 }, "stop5+=.3");
+
+
+</script>
